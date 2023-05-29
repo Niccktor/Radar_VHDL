@@ -1,0 +1,286 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xAA1C1CADDB975B4",
+      "device": "xc7a35ticpg236-1L",
+      "gen_directory": "../../../../Radar.gen/sources_1/bd/Radar_All",
+      "name": "Radar_All",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "mux_4v1_bus_0": "",
+      "segments_counter_0": "",
+      "Decoder_2v4_0": "",
+      "BCD_to_7_Segment_0": "",
+      "Divide_distance_0": ""
+    },
+    "ports": {
+      "Switch": {
+        "direction": "I",
+        "left": "11",
+        "right": "0"
+      },
+      "CLK": {
+        "direction": "I"
+      },
+      "AN0": {
+        "direction": "O"
+      },
+      "AN1": {
+        "direction": "O"
+      },
+      "AN2": {
+        "direction": "O"
+      },
+      "AN3": {
+        "direction": "O"
+      },
+      "segments": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "mux_4v1_bus_0": {
+        "vlnv": "xilinx.com:module_ref:mux_4v1_bus:1.0",
+        "xci_name": "Radar_All_mux_4v1_bus_0_0",
+        "xci_path": "ip\\Radar_All_mux_4v1_bus_0_0\\Radar_All_mux_4v1_bus_0_0.xci",
+        "inst_hier_path": "mux_4v1_bus_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mux_4v1_bus",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "A": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "C": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "D": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "X": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "segments_counter_0": {
+        "vlnv": "xilinx.com:module_ref:segments_counter:1.0",
+        "xci_name": "Radar_All_segments_counter_0_0",
+        "xci_path": "ip\\Radar_All_segments_counter_0_0\\Radar_All_segments_counter_0_0.xci",
+        "inst_hier_path": "segments_counter_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "segments_counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "Decoder_2v4_0": {
+        "vlnv": "xilinx.com:module_ref:Decoder_2v4:1.0",
+        "xci_name": "Radar_All_Decoder_2v4_0_0",
+        "xci_path": "ip\\Radar_All_Decoder_2v4_0_0\\Radar_All_Decoder_2v4_0_0.xci",
+        "inst_hier_path": "Decoder_2v4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Decoder_2v4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "AN0": {
+            "direction": "O"
+          },
+          "AN1": {
+            "direction": "O"
+          },
+          "AN2": {
+            "direction": "O"
+          },
+          "AN3": {
+            "direction": "O"
+          }
+        }
+      },
+      "BCD_to_7_Segment_0": {
+        "vlnv": "xilinx.com:module_ref:BCD_to_7_Segment:1.0",
+        "xci_name": "Radar_All_BCD_to_7_Segment_0_0",
+        "xci_path": "ip\\Radar_All_BCD_to_7_Segment_0_0\\Radar_All_BCD_to_7_Segment_0_0.xci",
+        "inst_hier_path": "BCD_to_7_Segment_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BCD_to_7_Segment",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "BCD": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "segments": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "Divide_distance_0": {
+        "vlnv": "xilinx.com:module_ref:Divide_distance:1.0",
+        "xci_name": "Radar_All_Divide_distance_0_0",
+        "xci_path": "ip\\Radar_All_Divide_distance_0_0\\Radar_All_Divide_distance_0_0.xci",
+        "inst_hier_path": "Divide_distance_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Divide_distance",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "distance": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Unite": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Dizaine": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Centaine": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Millier": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "BCD_to_7_Segment_0_segments": {
+        "ports": [
+          "BCD_to_7_Segment_0/segments",
+          "segments"
+        ]
+      },
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "segments_counter_0/CLK"
+        ]
+      },
+      "Decoder_2v4_0_AN0": {
+        "ports": [
+          "Decoder_2v4_0/AN0",
+          "AN0"
+        ]
+      },
+      "Decoder_2v4_0_AN1": {
+        "ports": [
+          "Decoder_2v4_0/AN1",
+          "AN1"
+        ]
+      },
+      "Decoder_2v4_0_AN2": {
+        "ports": [
+          "Decoder_2v4_0/AN2",
+          "AN2"
+        ]
+      },
+      "Decoder_2v4_0_AN3": {
+        "ports": [
+          "Decoder_2v4_0/AN3",
+          "AN3"
+        ]
+      },
+      "Divide_distance_0_Centaine": {
+        "ports": [
+          "Divide_distance_0/Centaine",
+          "mux_4v1_bus_0/C"
+        ]
+      },
+      "Divide_distance_0_Dizaine": {
+        "ports": [
+          "Divide_distance_0/Dizaine",
+          "mux_4v1_bus_0/B"
+        ]
+      },
+      "Divide_distance_0_Millier": {
+        "ports": [
+          "Divide_distance_0/Millier",
+          "mux_4v1_bus_0/D"
+        ]
+      },
+      "Divide_distance_0_Unite": {
+        "ports": [
+          "Divide_distance_0/Unite",
+          "mux_4v1_bus_0/A"
+        ]
+      },
+      "Switch_1": {
+        "ports": [
+          "Switch",
+          "Divide_distance_0/distance"
+        ]
+      },
+      "mux_4v1_bus_0_X": {
+        "ports": [
+          "mux_4v1_bus_0/X",
+          "BCD_to_7_Segment_0/BCD"
+        ]
+      },
+      "segments_counter_0_sel": {
+        "ports": [
+          "segments_counter_0/sel",
+          "mux_4v1_bus_0/sel",
+          "Decoder_2v4_0/sel"
+        ]
+      }
+    }
+  }
+}

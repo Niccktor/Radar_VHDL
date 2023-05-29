@@ -1,0 +1,143 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB49516B702BF949",
+      "device": "xc7a35ticpg236-1L",
+      "gen_directory": "../../../../Radar.gen/sources_1/bd/Radar",
+      "name": "Radar",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "PulseGenerator_0": "",
+      "HCSR04_V2_0": ""
+    },
+    "ports": {
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Radar_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "Echo": {
+        "direction": "I"
+      },
+      "Trig": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "PulseGenerator_0": {
+        "vlnv": "xilinx.com:module_ref:PulseGenerator:1.0",
+        "xci_name": "Radar_PulseGenerator_0_0",
+        "xci_path": "ip\\Radar_PulseGenerator_0_0\\Radar_PulseGenerator_0_0.xci",
+        "inst_hier_path": "PulseGenerator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PulseGenerator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Radar_CLK",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "pulse": {
+            "direction": "O"
+          }
+        }
+      },
+      "HCSR04_V2_0": {
+        "vlnv": "xilinx.com:module_ref:HCSR04_V2:1.0",
+        "xci_name": "Radar_HCSR04_V2_0_0",
+        "xci_path": "ip\\Radar_HCSR04_V2_0_0_1\\Radar_HCSR04_V2_0_0.xci",
+        "inst_hier_path": "HCSR04_V2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "HCSR04_V2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Radar_CLK",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Trig": {
+            "direction": "I"
+          },
+          "Echo": {
+            "direction": "I"
+          },
+          "Distance": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "PulseGenerator_0/clk",
+          "HCSR04_V2_0/CLK"
+        ]
+      },
+      "Echo_1": {
+        "ports": [
+          "Echo",
+          "HCSR04_V2_0/Echo"
+        ]
+      },
+      "PulseGenerator_0_pulse": {
+        "ports": [
+          "PulseGenerator_0/pulse",
+          "HCSR04_V2_0/Trig",
+          "Trig"
+        ]
+      }
+    }
+  }
+}

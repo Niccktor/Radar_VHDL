@@ -1,0 +1,145 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB49516BF2B9EB95",
+      "device": "xc7a35ticpg236-1L",
+      "gen_directory": "../../../../Radar.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "PulseGenerator_0": "",
+      "Divide_distance_0": "",
+      "HCSR04_V2_0": ""
+    },
+    "ports": {
+      "CLK": {
+        "direction": "I"
+      },
+      "Echo": {
+        "direction": "I"
+      },
+      "Trig": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "PulseGenerator_0": {
+        "vlnv": "xilinx.com:module_ref:PulseGenerator:1.0",
+        "xci_name": "design_1_PulseGenerator_0_0",
+        "xci_path": "ip\\design_1_PulseGenerator_0_0_1\\design_1_PulseGenerator_0_0.xci",
+        "inst_hier_path": "PulseGenerator_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PulseGenerator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "pulse": {
+            "direction": "O"
+          }
+        }
+      },
+      "Divide_distance_0": {
+        "vlnv": "xilinx.com:module_ref:Divide_distance:1.0",
+        "xci_name": "design_1_Divide_distance_0_0",
+        "xci_path": "ip\\design_1_Divide_distance_0_0\\design_1_Divide_distance_0_0.xci",
+        "inst_hier_path": "Divide_distance_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Divide_distance",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "distance": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Unite": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Dizaine": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Centaine": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Millier": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "HCSR04_V2_0": {
+        "vlnv": "xilinx.com:module_ref:HCSR04_V2:1.0",
+        "xci_name": "design_1_HCSR04_V2_0_0",
+        "xci_path": "ip\\design_1_HCSR04_V2_0_0\\design_1_HCSR04_V2_0_0.xci",
+        "inst_hier_path": "HCSR04_V2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "HCSR04_V2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "Trig": {
+            "direction": "I"
+          },
+          "Echo": {
+            "direction": "I"
+          },
+          "Distance": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Echo_1": {
+        "ports": [
+          "Echo",
+          "HCSR04_V2_0/Echo"
+        ]
+      },
+      "HCSR04_V2_0_Distance": {
+        "ports": [
+          "HCSR04_V2_0/Distance",
+          "Divide_distance_0/distance"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "CLK",
+          "PulseGenerator_0/clk",
+          "HCSR04_V2_0/CLK"
+        ]
+      },
+      "PulseGenerator_0_pulse": {
+        "ports": [
+          "PulseGenerator_0/pulse",
+          "Trig",
+          "HCSR04_V2_0/Trig"
+        ]
+      }
+    }
+  }
+}

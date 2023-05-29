@@ -1,0 +1,22 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"2.5",
+   "Default View_TopLeft":"-265,-239",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK -pg 1 -lvl 0 -x -100 -y -40 -defaultsOSRD
+preplace port port-id_Echo -pg 1 -lvl 0 -x -100 -y 0 -defaultsOSRD
+preplace port port-id_Trig -pg 1 -lvl 3 -x 450 -y 60 -defaultsOSRD
+preplace inst PulseGenerator_0 -pg 1 -lvl 1 -x 30 -y -50 -defaultsOSRD
+preplace inst HCSR04_V2_0 -pg 1 -lvl 2 -x 310 -y -60 -defaultsOSRD
+preplace netloc CLK_1 1 0 2 -80 -120 150
+preplace netloc PulseGenerator_0_pulse 1 1 2 140 -140 430
+preplace netloc Echo_1 1 0 2 -70J -110 130
+levelinfo -pg 1 -100 30 310 450
+pagesize -pg 1 -db -bbox -sgen -180 -180 530 120
+"
+}
+{
+   "da_clkrst_cnt":"4"
+}
